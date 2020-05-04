@@ -15,8 +15,8 @@ class RomanNumberTest(unittest.TestCase):
         self.assertEqual(romanos.romano_a_entero(''),'Error en formato')
 
     def test_repetitions(self):
-        self.assertEqual(romanos.romano_a_entero('II',2))
-        self.assertEqual(romanos.romano_a_entero('MMM',3000))
+        self.assertEqual(romanos.romano_a_entero('II'),2)
+        self.assertEqual(romanos.romano_a_entero('MMM'),3000)
         self.assertEqual(romanos.romano_a_entero('KKK'),'Error en formato')
         self.assertEqual(romanos.romano_a_entero('MK'),'Error en formato')
 

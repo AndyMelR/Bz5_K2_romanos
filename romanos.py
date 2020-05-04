@@ -5,11 +5,10 @@ romanos = {'M':1000,
         'X':10,
         'V':5,
         'I':1
-      }
+    }     
 
 def romano_a_entero(numero_romano):
-
-    if numero_romano=='':
+    if numero_romano == '':
         return 'Error en formato'
 
     if len(numero_romano)>3:
@@ -19,10 +18,10 @@ def romano_a_entero(numero_romano):
     numRepes = 1
     letraAnt = ''
     for letra in numero_romano:
-        if letra == letraAnt and numRepes ==3:
+        if letra == letraAnt and numRepes == 3:
             return 'Error en formato'
         elif letra == letraAnt :
-            numRepes+= 1
+            numRepes += 1
         else:
             numRepes = 1
 
