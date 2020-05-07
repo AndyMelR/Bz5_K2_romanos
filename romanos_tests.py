@@ -49,6 +49,5 @@ class RomanNumberTest(unittest.TestCase):
         self.assertEqual(romanos.romano_a_entero('XXX'),30)
 
 
-
-if __name__=='__main__':
+if __name__ == '__main__':
     unittest.main()

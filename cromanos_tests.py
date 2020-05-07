@@ -29,7 +29,7 @@ class RomanNumberTest(unittest.TestCase):
         self.assertEqual(str(nr), 'XXV')
         self.assertEqual(nr, 'XXV')
     
-    def test_qual_romanos(self):
+    def test_equal_romanos(self):
         nr1 = cromanos.RomanNumber(25)
         nr2 = cromanos.RomanNumber('XXV')
         self.assertEqual(nr1, nr2)
@@ -47,8 +47,6 @@ class RomanNumberTest(unittest.TestCase):
         nr3 = nr1 + 1
         self.assertEqual(nr3, cromanos.RomanNumber,24)
         self.assertTrue(isinstance(nr2, cromanos.RomanNumber)
-
-
 
 
 if __name__ == '__main__':
