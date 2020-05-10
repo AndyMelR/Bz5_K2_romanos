@@ -2,7 +2,7 @@ def doble(n):
    return n*2
 
 class Persona ():
-    def__init__(self,name,age):
+    def __init__(self,name,age):
 
         self.name = nombre
         self.age = edad

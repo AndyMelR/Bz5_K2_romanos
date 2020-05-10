@@ -1,30 +1,39 @@
 import romanos
 
-romanos = {'M':1000,
-        'D':500,
-        'C':100,
-        'L':50,
-        'X':10,
-        'V':5,
-        'I':1
-    }     
+class RomanNumber():
 
-    def __init__(self,valor):
+    __symbols = {'M':1000,
+            'CM':900,
+            'D':500,
+            'CD':400,
+            'C':100,
+            'XC':90,
+            'L':50,
+            'XL':40,
+            'X':10,
+            'IX':9,
+            'V':5,
+            'IV':4,
+            'I':1
+        }
+
+
+    def  __init__(self,valor):
         if isinstance(valor, str):
             self.value = self.romano_a_entero(valor)
-            if self.value = 'Error en formato':
-                self.rvalue == self.value
+            if self.value =='Error en formato':
+                self.rvalue = self.value
             else:
-                 self.rvalue = valor
+                    self.rvalue = valor
         else:
             self.value = valor
             self.rvalue = self.entero_a_romano()
             if self.value == 'Overflow':
-                self.value = self.rvalue
+                self.value = self.rvalue   
 
              
         
-    def romano_a_entero(self,valor):
+    def romano_a_entero(self,numero_romano):
         if numero_romano == '':
             return 'Error en formato'
         entero = 0 
@@ -34,33 +43,50 @@ romanos = {'M':1000,
 
         for letra in numero_romano:#bucle para recorrer cada letra del digito introducido
 
-        if letra in romanos:
-            if letraAnt == '' or  romanos[letraAnt] >= romanos[letra]:    
-                entero += romanos[letra] #acumulamos
-                fueResta = False #primera resta
-            else:
-                if letraAnt + letra in existen and numRepes < 2 and not fueResta: #si estan en existen
-                     entero = entero - romanos[letraAnt] * 2 + romanos[letra] 
-                     fueResta = True 
+            if letra in self.__symbols:
+                if letraAnt == '' or  self.__symbols[letraAnt] >= self.__symbols[letra]:    
+                    entero += self.__symbols[letra] #acumulamos
+                    fueResta = False #primera resta
                 else:
-                    return 'Error en formato'
-        else:
-            return 'Error en formato'
-           
-        if letra == letraAnt and numRepes == 3:
-            return 'Error en formato'
-        elif letra == letraAnt : #validamos letra Ant en este bucle
-            numRepes += 1 #acumulamos letras hasta llegar a 3
-        else:
-            numRepes = 1
-        
-        letraAnt = letra #siempre debe ser lo último. Las igual para poder compararlas y saber si ya ha salido
+                    if letraAnt + letra in __self.symbols.keys() and numRepes < 2 and not fueResta: #si estan en existen
+                        entero = entero - __self.symbols[letraAnt] * 2 + self.__symbols[letra] 
+                        fueResta = True 
+                    else:
+                        return 'Error en formato'
+            else:
+                return 'Error en formato'
             
+            if letra == letraAnt and numRepes == 3:
+                return 'Error en formato'
+            elif letra == letraAnt : #validamos letra Ant en este bucle
+                numRepes += 1 #acumulamos letras hasta llegar a 3
+            else:
+                numRepes = 1
+            
+            letraAnt = letra #siempre debe ser lo último. Las igual para poder compararlas y saber si ya ha salido
+                
         return entero
 
     def entero_a_romano(self):
         if self.value <1 or self.value > 3999:
             return 'Overflow'
+            if valor > 3999 :
+        return 'Overflow'
+    
+    '''componentes = descomponer(valor)
+
+    res=''
+    for valor in componentes :
+        while valor > 0:
+            k, v = __busca_valor_menor_o_igual(valor)
+            valor -= v
+            res += k
+    return res'''
+    
+    def __busca_valor_menor_o_igual(self,v):
+        for key ,value in self.__symbols.items():
+            if value <= v:
+                return key,value
 
     def __descomponer(self, numero):
         res = []
