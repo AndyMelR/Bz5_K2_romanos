@@ -48,8 +48,8 @@ class RomanNumber():
                     entero += self.__symbols[letra] #acumulamos
                     fueResta = False #primera resta
                 else:
-                    if letraAnt + letra in __self.symbols.keys() and numRepes < 2 and not fueResta: #si estan en existen
-                        entero = entero - __self.symbols[letraAnt] * 2 + self.__symbols[letra] 
+                    if letraAnt + letra in self.__symbols.keys() and numRepes < 2 and not fueResta: #si estan en existen
+                        entero = entero - self.__symbols[letraAnt] * 2 + self.__symbols[letra] 
                         fueResta = True 
                     else:
                         return 'Error en formato'
@@ -70,8 +70,7 @@ class RomanNumber():
     def entero_a_romano(self):
         if self.value <1 or self.value > 3999:
             return 'Overflow'
-            if valor > 3999 :
-        return 'Overflow'
+            
     
     '''componentes = descomponer(valor)
 
@@ -113,8 +112,8 @@ class RomanNumber():
 
     def __radd__(self,other): #metodo magico
         return self.__add__(other)
-        '''if isinstance(value,int) #principio de no repetirse de programacion
-            suma = self.value +second_value
+        '''if isinstance(value,int):   
+            suma = self.value + second_value
         else:
             suma = self.value + second_value.value #ahora debo crear otra instancia:
         resultado = RomanNumber(suma) #tengo que crear una nueva instancia. Le asignamos una variable para instanciarla

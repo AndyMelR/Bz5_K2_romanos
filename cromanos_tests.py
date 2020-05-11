@@ -97,8 +97,6 @@ class RomanNumberTest(unittest.TestCase):
         self.assertEqual(nr3, cromanos.RomanNumber,24)
         self.assertTrue(isinstance(nr2, cromanos.RomanNumber)
 
-
-if __name__ == '__main__':
+if __name__ =='__main__':
     unittest.main()
-
 
